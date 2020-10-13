@@ -1,0 +1,46 @@
+<div class="backdrop">
+   <div class="container">
+   <mat-card class="my-card" [ngClass]="{ 'withError': service.error$ | async }">
+      <mat-card-content>
+         <h2>Login</h2>
+         <div class="danger_msg" *ngIf="service.error$ | async as error"> {{ error }} </div>
+         <form class="my-form" [formGroup]="loginForm">
+            <mat-form-field class="full-width">
+               <mat-label>Email</mat-label>
+               <input  matInput  placeholder="Email" name="email" formControlName="email">
+                <mat-error *ngIf="loginForm.get('email').invalid &&
+                loginForm.get('email').errors.email ">Введено некорректний email</mat-error>
+                <mat-error *ngIf="loginForm.get('email').invalid &&
+                loginForm.get('email').errors.required">Введіть свій email</mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+               <mat-label>Password</mat-label>
+               <input  matInput type="password"  placeholder="Password" name="password" formControlName="password">
+               <mat-error *ngIf="loginForm.get('password').invalid && 
+              loginForm.get('password').errors.required">Введіть пароль</mat-error>
+              <mat-error *ngIf="loginForm.get('password').invalid && 
+              loginForm.get('password').errors.minlength">Пароль занадто короткий</mat-error>
+            </mat-form-field>
+         </form>
+         <a *ngIf="invalid" href="" class="forgpass" (click)="forgotPassword()">Забув пароль?</a>
+         <div class="reg"><span>Немає аккаунту? </span> <span class="link" (click)="switchToReg()">Реєстрація</span>   </div>
+      </mat-card-content>
+      <mat-card-actions>
+         <button mat-raised-button (click)="onSubmit()" color="primary">LOGIN</button>
+      </mat-card-actions>
+      <div class="close_button">
+         <a (click)="close.emit()">
+           <span class="left">
+             <span class="circle-left"></span>
+             <span class="circle-right"></span>
+           </span>
+           <span class="right">
+             <span class="circle-left"></span>
+             <span class="circle-right"></span>
+           </span>
+         </a>
+       </div>
+   </mat-card>
+   </div>
+</div>
+

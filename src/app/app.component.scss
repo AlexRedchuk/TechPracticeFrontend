@@ -1,0 +1,142 @@
+.menu {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    z-index: 5;
+    background-color: #fff;
+    align-content: center;
+}
+
+
+.menu_holder {
+    margin: 0 auto;
+    height: 50px;
+    width: 850px;
+    display: flex;
+    justify-content: space-around;
+}
+.start {
+    display: flex;
+    align-items: center;
+    width: 170px;
+}
+
+.center {
+    width: 540px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.end {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .rotating {   
+            transform: rotate(.25turn);
+            display: flex;
+            justify-content: space-between;
+            transition: .4s;
+            fill: #fc0398;
+    }
+    
+
+    .norotating {   
+            display: flex;
+            justify-content: space-between;
+            transition: .4s;
+        }
+        .norotating:hover { 
+            cursor: pointer;
+            fill: #fc0398;
+        }
+    
+}
+.menu_button {
+    font-size: 14px;
+    line-height: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.menu_button:hover{
+    &.arrow:after{
+        border-color: #fc0398;  
+        transition: all 0.4s;
+    }
+    
+    color: #fc0398;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.profile_button {
+    margin: auto;
+    position: relative;
+    background: rgb(102, 29, 29);
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    font-style: 20px;
+}
+
+.profile_menu {
+    margin-right: 100px;
+}
+
+.profile_menu_button {
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.profile_button:hover {
+    cursor: pointer;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img {
+        width: 140px;
+        height: 70px;
+    }
+    
+}
+
+.logo:after {
+    margin-left: 5px;
+    content: '';
+    border-left: solid 0.5px;
+    box-sizing: border-box;
+    height: 5px;
+    height: 30px;
+    color: grey;
+}
+
+.arrow:after {
+    content: "";
+    border: solid black;
+    border-width: 0 1.5px 1.5px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-left: 4px;
+    margin-bottom: 2px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+
+}
+
+.active {    
+    color: #fc0398;
+    cursor: pointer;
+}
+
+

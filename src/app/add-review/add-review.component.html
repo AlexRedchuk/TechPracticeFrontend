@@ -1,0 +1,34 @@
+<div class="holown">
+<div class="leave_review">
+    <div class="leave_review_in">
+        <form class="example-form" [formGroup]="reviewForm">
+            <mat-form-field class="example-full-width">
+              <mat-label class="text_rew">Введіть підзаголовок</mat-label>
+              <input formControlName="topic" matInput placeholder="Введіть підзаголовок" required>
+              <mat-error *ngIf="reviewForm.get('topic').invalid && 
+              reviewForm.get('topic').errors.required"> Введіть підзаголовок </mat-error>
+            </mat-form-field>
+            <div >
+            <mat-form-field class="example-full-width">
+              <mat-label class="text_rew">Оцініть роботу компанії вцілому</mat-label>
+              <input formControlName="mark" matInput placeholder="Оцініть нашу компанію від 1 до 10" min="1" max="10" type="number">
+              <mat-error *ngIf="reviewForm.get('mark').invalid && 
+              reviewForm.get('mark').errors.min"> Значення не може бути нижчим ніж 1 </mat-error>
+              <mat-error *ngIf="reviewForm.get('mark').invalid && 
+              reviewForm.get('mark').errors.max"> Значення не може бути вищим ніж 10
+              </mat-error>
+          </mat-form-field>
+          </div>
+            <mat-form-field class="example-full-width">
+              <mat-label class="text_rew">Ваш відгук про компанію</mat-label>
+              <textarea formControlName="text" matInput  required></textarea>
+              <mat-error *ngIf="reviewForm.get('text').invalid && 
+              reviewForm.get('text').errors.required"> Введіть ваш відгук </mat-error>
+            </mat-form-field>
+          </form>
+          <button class="btn_review" (click)="send()">Надіслати відгук </button>
+          <a class="cross_btn" (click)="closeModal.emit()"></a>
+    </div>
+   
+</div>
+</div>

@@ -1,0 +1,139 @@
+.main{
+    padding-top: 100px;
+    width: 100%;
+    background-color: #e3e3e3;
+    min-height: 700px;
+    padding-bottom: 50px;
+}
+
+.hotel_card{
+    margin: 0 auto;
+    background-color: #fff;
+    width: 1100px;
+    height: 180px;
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    display: flex;
+    overflow: hidden;
+}
+
+.hotel_card > img {
+    width: 200px;
+    height: 180px;
+}
+
+.pink_btn {
+    margin-top: 120px;
+}
+
+.justify {
+    width: 850px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.content {
+    padding: 20px;
+    padding-left: -20px;
+    width: 500px;
+    height: 150px;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+}
+
+.location{
+    display: flex;  
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.name {
+    font-family: 'Cuprum';
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.additional_tools {
+    text-align: center;
+    width: 600px;
+    height: 40px;
+    display: flex;
+}
+
+.additional_tools{
+    div{
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+    }
+    span {
+        margin-left: 10px;
+    }
+}
+
+
+.search { 
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input_stule{
+    box-sizing: border-box;
+    background: #e0e0e0;
+    width: 1040px;
+    padding: 18px;
+    border-radius: 24px;
+    border: 1px solid #2c2c2c;
+    font-size: 15px;
+    transition: 0.5S;
+}
+
+.input_stule:hover{
+    background: #fff;
+    border-color: transparent;
+    outline: none;
+}
+
+
+.input_stule:focus{
+    border-color: transparent;
+    transform: scale(1.02);
+    outline: none;
+    background: #fff;
+    transition: 0.5S;
+}
+
+.search_button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+}
+
+.search_button:hover {
+    cursor: pointer;
+}
+
+.search_button:focus {
+    outline: none;
+}
+
+.noTours {
+    margin: 0 auto;
+    width: 1100px;
+    font-family: 'Montserrat' serif;
+    padding-top: 20px;
+    font-size: 24px;
+
+}
+
+.pink_btn {
+    font-size: 14px;
+}

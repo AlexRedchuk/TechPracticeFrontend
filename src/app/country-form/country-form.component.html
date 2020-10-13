@@ -1,0 +1,10 @@
+<a [routerLink]="['/tours', country._id]" class="container" *ngFor="let country of countries">	
+  <div class="country">
+  <img class="img" [src]="country.img" alt="немає фото">
+    <span class="b3">{{ country.name | titlecase}}</span>
+  </div>
+    <span class="price">
+    </span>
+  </a>
+
+

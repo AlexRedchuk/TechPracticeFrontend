@@ -1,0 +1,79 @@
+<div class="backdrop">
+  <div class="container">
+    <mat-card class="my-card" [ngClass]="{ 'withError': service.error$ | async }">
+      <mat-card-content>
+        <form class="my-form" [formGroup]="registrationForm">
+          <h2>Registration</h2>
+          <div class="danger_msg" *ngIf="service.error$ | async as error"> {{ error }} </div>
+          <mat-form-field>
+            <mat-label>Ім'я</mat-label>
+            <input matInput placeholder="Ім'я" formControlName="name" name="name" required>
+            <mat-error *ngIf="registrationForm.get('name').invalid && 
+          registrationForm.get('name').errors.required">Введіть ім'я</mat-error>
+            <mat-error *ngIf="registrationForm.get('name').invalid && 
+          registrationForm.get('name').errors.minlength">Занадто коротке ім'я</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Прізвище</mat-label>
+            <input matInput placeholder="Прізвище" formControlName="surname" name="surname" required>
+            <mat-error *ngIf="registrationForm.get('surname').invalid && 
+          registrationForm.get('surname').errors.required">Введіть прізвище</mat-error>
+            <mat-error *ngIf="registrationForm.get('surname').invalid && 
+          registrationForm.get('surname').errors.minlength">Занадто коротке ім'я</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Номер телефону</mat-label>
+            <input matInput type="tel" placeholder="Номер телефону" formControlName="phone" name="phone" required>
+            <mat-error *ngIf="registrationForm.get('phone').invalid && 
+            registrationForm.get('phone').errors.required">Введіть номер телефону</mat-error>
+            <mat-error *ngIf="registrationForm.get('phone').invalid && 
+            registrationForm.get('phone').errors.pattern">Некорректний номер телефону</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Місто</mat-label>
+            <input matInput placeholder="Місто" formControlName="city" name="city" required>
+            <mat-error *ngIf="registrationForm.get('city').invalid && 
+          registrationForm.get('city').errors.required">Введіть місто</mat-error>
+            <mat-error *ngIf="registrationForm.get('city').invalid && 
+          registrationForm.get('city').errors.minlength">Занадто коротке ім'я</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" formControlName="email" name="email" required>
+            <mat-error *ngIf="registrationForm.get('email').invalid &&
+                registrationForm.get('email').errors.pattern">Введено некорректний email</mat-error>
+            <mat-error *ngIf="registrationForm.get('email').invalid &&
+                registrationForm.get('email').errors.required">Введіть свій email</mat-error>
+          </mat-form-field>
+          <mat-form-field class="pswrd">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" formControlName="password" [type]="hide ? 'password' : 'text'"
+              name="password" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="registrationForm.get('password').invalid && 
+              registrationForm.get('password').errors.required">Введіть пароль</mat-error>
+            <mat-error *ngIf="registrationForm.get('password').invalid && 
+              registrationForm.get('password').errors.minlength">Пароль занадто короткий</mat-error>
+          </mat-form-field>
+          <div class="log"><span>Уже є аккаунт? </span><span class="link" (click)="switchToLog()">Вхід</span></div>
+          <button mat-raised-button (click)="onSubmit()" color="primary" type="submit">Send</button>
+        </form>
+      </mat-card-content>
+      <div class="close_button">
+        <a (click)="close.emit()">
+          <span class="left">
+            <span class="circle-left"></span>
+            <span class="circle-right"></span>
+          </span>
+          <span class="right">
+            <span class="circle-left"></span>
+            <span class="circle-right"></span>
+          </span>
+        </a>
+      </div>
+    </mat-card>
+  </div>
+</div>

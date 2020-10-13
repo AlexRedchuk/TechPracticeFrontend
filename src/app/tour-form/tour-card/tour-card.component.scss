@@ -1,0 +1,122 @@
+.main{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	background-color: #eff4f8;	
+	padding-top: 100px;
+	
+}
+
+.card_tour{
+	width: 350px;
+	height: 370px;
+	border-radius: 25px;
+	background-color: white;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-family: 'Montserrat', 'Roboto Condensed', sans-serif;
+	margin-right: 15px;
+	margin-left: 15px;
+	margin-bottom: 30px;
+}
+
+.font_weigth {
+	font-weight: 500;
+}
+
+.card_tour_content{
+	width: 315px;
+	height: 300px;
+	background-color: #fff;
+}
+
+.card_tour_content_heading{
+	color: #2c2c2c;
+    font-size: 18px;
+    font-weight: 700;
+	line-height: 24px;
+	font-family: 'Montserrat', 'Roboto Condensed', sans-serif;
+}
+
+.card_tour_content_params{
+	width: 315px;
+	height: 120px;
+	display: flex;
+	justify-content: space-around;
+	flex-direction:column;
+	padding-bottom: 10px;
+}
+
+.icon{
+	width: 300px;
+	height: 21px;
+	color: #464646;
+	font-size: 12px;
+	font-weight: 400;
+	white-space: nowrap;
+	display: flex;
+	align-items: center;
+	svg {
+		padding-right: 3px;
+	}	
+}
+
+.card_tour_content_price{
+	width: 300px;
+	height: 80px;
+	padding-top: 10px;
+
+}
+.card_tour_content_price_1{
+	width: 300px;
+	height: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.procent{
+	width: 40px;
+	height: 20px;
+	border-radius: 10px;
+	background-color:  #ea5b0c;
+	color: #fff;
+	text-align: center;
+	font-size: 16px;
+    font-weight: 700;
+}
+
+.card_tour_content_price_2{
+	width: 300px;
+	height: 30px;
+	margin-top: 3px;
+	display: flex;
+	align-items: flex-end;
+}
+.old_price{
+	width: 50px;
+	color: #9b9b9b;
+    font-size: 15px;
+	font-weight: 400;
+	text-decoration: line-through;
+}
+
+.new_price{
+	font-size: 24px;
+    font-weight: 700;
+    color: #2c2c2c;
+    line-height: normal;
+    margin-left: auto;
+}
+
+.pink_btn{
+	margin: 0 auto;
+}
+
+.card_place{
+	margin: 0 auto;
+	width: 1140px;
+	display: flex;
+	flex-flow: row wrap ;
+	align-items: stretch;
+  }

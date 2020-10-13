@@ -1,0 +1,44 @@
+
+.container{
+	display: flex;
+    width: 250px;
+    justify-content: space-between;
+	padding-top: 11px;
+    padding-bottom: 9px;
+    padding-left: 12px;
+	padding-right: 12px;
+	text-decoration: none;
+}
+
+.img{
+	width: 20px;
+	height: 16px;
+	margin-right: 13px;
+}
+
+.price{
+	font-weight:500;
+	color: #9b9b9b;
+}
+
+.country {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.b3{
+	font-weight:500;
+	color: #9b9b9b;
+}
+
+.container:hover{
+	background-color: #eff4f8;
+    color: #2c2c2c;
+    cursor: pointer;
+}
+
+.b3:hover{
+	color: black;
+    
+}

@@ -1,0 +1,125 @@
+.main {
+  width: 100%;
+  height: 1000px;
+  padding-top: 80px;
+  background: #eff4f8;
+}
+
+.profile_card {
+  position: relative  ;
+  font-family: 'Roboto', sans-serif;
+  color: #3a3636;
+  width: 780px;
+  height: 850px;
+  margin: auto;
+  background: #fff;
+  border-radius: 5px;
+  padding: 40px;
+  .exit {
+    padding-top: 30px;
+    padding-right: 30px;
+    z-index: 30;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s all;
+  }
+  .exit:hover {
+    cursor: pointer;
+    fill: #af2c0c;
+  }
+  .profile_top {
+    display: flex;
+    .profile_img {
+      width: 200px;
+      height: 200px; 
+         .no_img {
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         width: 180px;
+         height: 180px;
+         background: #e0e0e0;
+         border-radius: 50%;
+         svg {
+           fill: white;
+         }
+       }
+    }
+    .profile_top_info {
+      padding-left: 40px;
+      .name {
+        padding-top: 15px;
+        font-size: 28px;
+        font-weight: 500;
+      }
+      .email_container {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        .email {
+          color: #0645AD;
+        }
+        .town {
+          font-weight: 500;
+        }
+      }
+      .phone {
+        font-size: 14px;
+      }
+    }
+    
+  }
+  .profile_bottom {
+    padding-top: 20px;
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+      padding-bottom: 5px;
+    }
+    .orders{
+      width: 100%;
+      margin-top: 20px;
+      height: 600px;
+      border: 1px #9e9e9e solid;
+      overflow: auto;
+      
+      
+      .order {
+        
+        width: 100%;
+        height: 100px;
+        border-bottom: 1px solid #000;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .name {
+          font-weight: 600;
+          font-size: 20px;
+          width: 300px;
+        }
+        .name:focus {
+          outline: none;
+        }
+        .name:hover{
+          cursor: pointer;
+          color: rgb(10, 48, 128);
+        }
+        .date {
+          font-size: 17px; 
+          width: 160px;
+        }
+        .drop_order {
+          width: 100px;
+          height: 30px;
+          background: #000;
+          line-height: 30px;
+          text-align: center;
+          color: white;
+        }
+        .drop_order:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

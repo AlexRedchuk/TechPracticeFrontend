@@ -1,0 +1,35 @@
+
+.footer{
+    color: #fff;
+    font-family: 'Montserrat';
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #005cad;
+    
+  }
+  
+  .footer_kontact{
+    width: 250px;
+    height: 50px;
+    margin-left: 20px; 
+  }
+  
+  .footer_kontact_txt{
+    margin-top: 10px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+  }
+  
+  
+  .footer_kontact_txt2{
+    
+    width: 250px;
+    height: 140px;
+    font-size: small;
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+  }

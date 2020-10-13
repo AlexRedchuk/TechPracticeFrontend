@@ -1,0 +1,76 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.7);
+    z-index: 10;
+}
+.my-card {
+    position: absolute;
+    left: 50%;
+    top: 42%;
+    transform: translate(-50%, -50%);
+    height: 280px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.withError {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  height: 310px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.my-form {
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.reg {
+    margin-top: 10px;
+    font-size: 13px;
+    font-family: 'Roboto';
+}
+
+.reg > a {
+    text-decoration: none;
+}
+
+.forgpass {
+    font-family: 'Roboto';
+    position: relative;
+    text-align: end;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.link {
+  cursor: pointer;
+  color: rgb(116, 37, 139);
+}
+
+
+.danger_msg {
+  width: 200px;
+  height: 30px;
+  background: #d15238;
+  color: white;
+  font-size: 12px;
+  margin-top: -10px;
+  line-height: 30px;
+  margin-bottom: 10px;
+}

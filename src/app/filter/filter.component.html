@@ -1,0 +1,74 @@
+<form [formGroup]="filterForm">
+    <div class="filter_container">
+        <div>
+            <div>
+                <mat-form-field class="country select" color="white">
+                    <mat-label>Країни</mat-label>
+                    <mat-select [(ngModel)]="default" formControlName="country">
+                        <mat-option *ngFor="let country of countries" [value]="country._id" >
+                            <div class="country_content">
+                                <img [src]="country.img" alt=""><span>{{ country.name }}</span>
+                            </div>
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="date select">
+            <div>
+                <mat-form-field>
+                    <mat-label>Введіть дату подорожі</mat-label>
+                    <mat-date-range-input [rangePicker]="picker">
+                        <input matStartDate placeholder="Початок" formControlName="date_min">
+                        <input matEndDate placeholder="Кінець" formControlName="date_max">
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                    <mat-error *ngIf="filterForm.get('date_min').invalid && filterForm.get('date_min').touched &&
+                    filterForm.get('date_min').errors.required">Оберіть початкову дату</mat-error>
+                    <mat-error *ngIf="filterForm.get('date_max').invalid && filterForm.get('date_max').touched &&
+                    filterForm.get('date_max').errors.required">Оберіть кінцеву дату
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="days select">
+            <div>
+                <mat-form-field>
+                    <input autocomplete="off" matInput value="3" placeholder="Кількість ночей" min="2" max="7" type="number" formControlName="duration">
+                    <mat-error *ngIf="filterForm.get('duration').invalid && 
+                        filterForm.get('duration').errors.min"> Значення не може бути нижчим ніж 2 </mat-error>
+                    <mat-error *ngIf="filterForm.get('duration').invalid && 
+                        filterForm.get('duration').errors.max"> Значення не може бути вищим ніж 7
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="adult select">
+            <div>
+                <mat-form-field>
+                    <input autocomplete="off" matInput placeholder="Кількість дорослих" min="1" max="4" type="number" formControlName="adults">
+                    <mat-error *ngIf="filterForm.get('adults').invalid && 
+                    filterForm.get('adults').errors.min"> Значення не може бути нижчим ніж 1 </mat-error>
+                    <mat-error *ngIf="filterForm.get('adults').invalid && 
+                    filterForm.get('adults').errors.max"> Значення не може бути вищим ніж 4
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="children select">
+            <div>
+                <mat-form-field>
+                    <input autocomplete="off" matInput placeholder="Введіть кількість дітей" min="0" max="4" type="number" formControlName="children">
+                    <mat-error *ngIf="filterForm.get('children').invalid && 
+                    filterForm.get('children').errors.min"> Значення не може бути нижчим ніж 0 </mat-error>
+                    <mat-error *ngIf="filterForm.get('children').invalid && 
+                    filterForm.get('children').errors.max"> Значення не може бути вищим ніж 4
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <button class="send_button"  mat-button type="submit" 
+            (click)="onSubmit()">Знайти тур</button>
+    </div>
+</form>

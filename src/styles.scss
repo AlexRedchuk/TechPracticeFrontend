@@ -1,0 +1,269 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+a {
+  text-decoration: none;
+  color: black;
+}
+@mixin transition() {
+    transition: all .4s cubic-bezier(.215,.61,.355,1);
+}
+
+.close_button {
+    z-index: 20;
+    cursor: pointer;
+    transform: scale(.3);
+    top: 0;
+    right: 0;
+    position: absolute;
+  a {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    margin-top: -50px;
+    margin-right: -50px;
+    background-color: #ffffff;
+    border-radius: 50px;
+    opacity: 1;
+    @include transition();
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(247,149,29,0.5);
+    -moz-box-shadow: 0px 0px 30px 0px rgba(247,149,29,0.5);
+    box-shadow: 0px 0px 30px 0px rgba(247,149,29,0.5);
+    
+    & > span {
+      background-color: #f5a700;
+      display: block;
+      height: 12px;
+      border-radius: 6px;
+      position: relative;
+      @include transition();
+      position: absolute;
+      top: 50%;
+      margin-top: -6px;
+      left: 18px;
+      width: 64px;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      -moz-justify-content: space-between;
+      -ms-justify-content: space-between;
+
+      span {
+        display: block;
+        background-color: #ed7f00;
+        width: 12px;
+        height: 12px;
+        border-radius: 6px;
+        @include transition();
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      &.left {
+        transform: rotate(45deg);
+        transform-origin: center;
+
+        .circle-left {
+          @include transition();
+          margin-left: 0;
+        }
+
+        .circle-right {
+          @include transition();
+          margin-left: 52px;
+        }
+      }
+
+      &.right {
+        transform: rotate(-45deg);
+        transform-origin: center;
+
+        .circle-left {
+          @include transition();
+          margin-left: 0;
+        }
+
+        .circle-right {
+          @include transition();
+          margin-left: 52px;
+        }
+      }
+    }
+
+    &:hover {
+      & > span {
+        background-color: #2faee0;
+        @include transition();
+
+        span {
+          @include transition();
+          background-color: #008ac9;
+        }
+
+        &.left {
+
+          .circle-left {
+            @include transition();
+            margin-left: 52px;
+          }
+
+          .circle-right {
+            @include transition();
+            margin-left: 0;
+          }
+        }
+
+        &.right {
+
+          .circle-left {
+            @include transition();
+            margin-left: 52px;
+          }
+
+          .circle-right {
+            @include transition();
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cross_btn {
+  transform: scale(.7);
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.cross_btn:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+.cross_btn:before, .cross_btn:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.cross_btn:before {
+  transform: rotate(45deg);
+}
+.cross_btn:after {
+  transform: rotate(-45deg);
+}
+
+.show_more_button{
+  display: block;
+  width: 232px;
+  height: 48px;
+  border-radius: 24px;
+  border: 1px solid #009de1;
+  line-height: 48px;
+  text-align: center;
+  color: #009de1;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.show_more_button_reverse {
+  display: block;
+  width: 232px;
+  height: 48px;
+  border-radius: 24px;
+  border: 1px solid #009de1;
+  background: #009de1;
+  line-height: 48px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+  margin: 0 auto;
+  margin-top: 20px;
+  
+}
+
+.show_more_button_reverse:hover {
+  cursor: pointer;
+  background: none;
+  transition: 0.5s;
+  color: #009de1;
+  
+}
+
+.show_more_button:hover{
+  cursor: pointer;
+  background-color: #009de1;
+  transition: 0.5s;
+  color: #fff;;
+
+}
+
+
+.pink_btn{
+  font-family: 'Roboto';
+display: flex;
+width: 220px;
+height: 40px;
+line-height: 40px;
+border-radius: 24px;
+border: 1px solid #ff007b;
+font-size: 20px;
+font-weight: 700px;
+  align-items: center;
+  justify-content: center;
+background: #fff;
+color: #ff007b;
+ text-decoration: none;
+
+}
+
+.pink_btn:hover{
+  cursor: pointer;
+  transition: 0.4s;
+  color: white;
+  background-color: #ff007b;
+}
+
+.pink_btn:focus {
+  outline: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
